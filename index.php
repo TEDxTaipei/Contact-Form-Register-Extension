@@ -9,3 +9,8 @@ Text Domain: tedxtaipei-cfre
 Domain Path: /lang
 Version: 0.1.0
 */
+
+require "core/RegisterExtension.php";
+
+$tedxtaipei_CFRE = \TEDxTaipei\RegisterExtension\RegisterExtension::getInstance();
+$tedxtaipei_CFRE->bootstrap();
