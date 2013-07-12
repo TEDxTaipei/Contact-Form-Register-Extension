@@ -24,6 +24,7 @@ class RegisterExtension
 
     // Register WordPress Hooks
     add_action('admin_notices', array(&$this, 'displayNotice'));
+    add_action('plugins_loaded', array(&$this, 'loadTextdomain'));
   }
 
   /**
@@ -73,7 +74,7 @@ class RegisterExtension
 
     if(!$dependenciaCheck) {
       $dependPlugin = key($dependenciaStatus);
-      $this->makeNotice('error', sprintf(__('<strong>Contact From Register Extension:</strong> Dependencies plguin %s is not active.', 'tedxtaipei-cfre'), $dependPlugin));
+      $this->makeNotice('error', sprintf(__('<strong>Contact From Register Extension:</strong> Dependencies plguin %s is not active.', 'tedxtaipei'), $dependPlugin));
     }
 
     $this->enable = $dependenciaCheck;
@@ -97,7 +98,7 @@ class RegisterExtension
       $formID = $_POST['_wpcf7'];
       if(!$this->checkEMailUniqueInDatabase($value, $name, $formID)) {
         $result['valid'] = false;
-        $result['reason'][$name] = __("Your email is already exists.", 'tedxtaipei-cfre');
+        $result['reason'][$name] = __("Your email is already exists.", 'tedxtaipei');
       }
     }
 
@@ -159,6 +160,15 @@ class RegisterExtension
       echo $notice['message'];
       echo "</p></div>";
     }
+  }
+
+  /**
+   * Load Textdomain
+   */
+
+  public function loadTextdomain()
+  {
+    load_plugin_textdomain('tedxtaipei', false, basename(self::$ABSPATH) . '/lang');
   }
 
 }
