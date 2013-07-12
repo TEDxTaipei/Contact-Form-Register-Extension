@@ -1,0 +1,25 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Contact From Register Extension\n"
+"POT-Creation-Date: 2013-07-11 16:11+0800\n"
+"PO-Revision-Date: 2013-07-11 16:18+0800\n"
+"Last-Translator: 蒼時弦也 <elct9620@frost.tw>\n"
+"Language-Team: TEDxTaipei\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.7\n"
+"X-Poedit-KeywordsList: _;gettext;gettext_noop;_e;__\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SearchPath-0: ..\n"
+
+#: ../core/RegisterExtension.php:76
+#, php-format
+msgid ""
+"<strong>Contact From Register Extension:</strong> Dependencies plguin %s is "
+"not active."
+msgstr "<strong>聯絡表單擴充</strong> 相依插件 %s 並沒有被啓用。"
+
+#: ../core/RegisterExtension.php:100
+msgid "Your email is already exists."
+msgstr "您的信箱已經存在於資料庫。"
